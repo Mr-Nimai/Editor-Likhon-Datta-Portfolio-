@@ -1,0 +1,751 @@
+/* =========================
+   CINEMATIC PORTFOLIO CSS
+   ========================= */
+
+/* ---------- RESET ---------- */
+
+/* hide native cursor on desktop */
+/* পুরো স্ক্রলবারের স্টাইল */
+::-webkit-scrollbar {
+    width: 10px; /* স্ক্রলবারের চওড়া */
+}
+
+/* স্ক্রলবারের পেছনের রাস্তা (Track) */
+::-webkit-scrollbar-track {
+    background: #0077ff; 
+}
+
+/* স্ক্রল করার দণ্ড (Handle) */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8293ff, #5a67d8);
+    border-radius: 10px;
+    border: 2px solid #1a1a1a; /* ট্র্যাকের সাথে একটু গ্যাপ রাখার জন্য */
+}
+
+/* হ্যান্ডেলের ওপর মাউস নিলে কালার পরিবর্তন */
+::-webkit-scrollbar-thumb:hover {
+    background: #5a67d8;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: radial-gradient(circle at top, #0f172a, #020617 70%);
+    color: #e5e7eb;
+    overflow-x: hidden;
+}
+
+/* ---------- SCROLLBAR ---------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #020617;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#38bdf8, #0ea5e9);
+    border-radius: 10px;
+}
+
+/* ---------------- HEADER ---------------- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(2, 6, 23, 0.65);
+    backdrop-filter: blur(14px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+header .logo {
+    float: left;
+    padding: 15px 40px;
+}
+
+header .logo img {
+    height: 40px;
+}
+
+header .nav {
+    float: right;
+    padding: 22px 40px;
+}
+
+header .nav ul {
+    list-style: none;
+}
+
+header .nav ul li {
+    float: left;
+    margin-left: 30px;
+}
+
+header .nav ul li a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    position: relative;
+    transition: 0.3s;
+}
+
+header .nav ul li a:hover {
+    color: #38bdf8;
+}
+
+header .nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #38bdf8;
+    transition: 0.3s;
+}
+
+header .nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* ---------------- HERO ---------------- */
+.section1 {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 8%;
+}
+
+.half1 {
+    flex: 1;
+}
+
+.half1 h3 {
+    letter-spacing: 5px;
+    font-weight: 300;
+    color: #94a3b8;
+    margin-bottom: 14px;
+}
+
+.half1 h1 {
+    font-size: 72px;
+    line-height: 1.1;
+    background: linear-gradient(to right, #ffffff, #38bdf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.half1 p {
+    margin-top: 20px;
+    color: #cbd5f5;
+    max-width: 520px;
+    line-height: 1.7;
+}
+
+.half2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.half2 img {
+    max-width: 420px;
+    border-radius: 14px;
+    filter: grayscale(15%) contrast(1.15);
+    box-shadow: 0 50px 100px rgba(0,0,0,0.7);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* ---------------- ABOUT ---------------- */
+.section2 {
+    padding: 120px 8%;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.section2 img {
+    max-width: 420px;
+    border-radius: 18px;
+    box-shadow: 0 40px 90px rgba(0,0,0,0.7);
+}
+
+.text2 h3 {
+    color: #38bdf8;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.text2 h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.text2 p {
+    color: #cbd5f5;
+    line-height: 1.9;
+    max-width: 620px;
+}
+
+/* ---------------- SERVICES ---------------- */
+.section3 {
+    padding: 120px 8%;
+    text-align: center;
+}
+
+.section3 h1 {
+    font-size: 42px;
+    margin-bottom: 70px;
+}
+
+.ser1 {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.ser1 div {
+    flex: 1;
+    min-width: 280px;
+    background: linear-gradient(180deg, #020617, #020617);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 45px 35px;
+    border-radius: 20px;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ser1 div::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(56,189,248,0.15), transparent);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.ser1 div:hover::before {
+    opacity: 1;
+}
+
+.ser1 div:hover {
+    transform: translateY(-14px);
+    box-shadow: 0 40px 80px rgba(56,189,248,0.35);
+    border-color: rgba(56,189,248,0.4);
+}
+
+.service i {
+    font-size: 38px;
+    color: #38bdf8;
+    margin-bottom: 22px;
+}
+
+.service h1 {
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+.service p {
+    font-size: 14px;
+    color: #cbd5f5;
+    line-height: 1.7;
+}
+
+/* ---------------- PRICING ---------------- */
+.section6 {
+    padding: 120px 8%;
+}
+
+.text4 {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.text4 h1 {
+    font-size: 42px;
+}
+
+.card {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card1 {
+    width: 300px;
+    background: linear-gradient(180deg, #020617, #020617);
+    border-radius: 24px;
+    padding: 45px 30px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: 0.4s;
+}
+
+.card1:hover {
+    transform: scale(1.07);
+    box-shadow: 0 50px 100px rgba(56,189,248,0.45);
+}
+
+.card1 h1 {
+    font-size: 48px;
+    color: #38bdf8;
+}
+
+.card1 .price {
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.card1 input {
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: #020617;
+    border: none;
+    padding: 14px 44px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.card1 input:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(56,189,248,0.6);
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+    padding: 90px 8%;
+    background: #020617;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+footer p {
+    color: #94a3b8;
+    margin-top: 10px;
+}
+
+/* =========================
+   MODAL (BUY POPUP)
+   ========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(8px);
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 420px;
+    background: linear-gradient(180deg, #020617, #020617);
+    border-radius: 24px;
+    padding: 36px 32px;
+    box-shadow: 0 50px 120px rgba(56,189,248,0.45);
+    animation: popup 0.35s ease;
+    position: relative;
+}
+
+@keyframes popup {
+    from {
+        transform: scale(0.85) translateY(25px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    background: #020617;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #e5e7eb;
+    padding: 13px 15px;
+    border-radius: 14px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+    outline: none;
+    border-color: #38bdf8;
+}
+
+.modal-content button,
+.modal-content input[type="submit"] {
+    width: 100%;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: #020617;
+    border: none;
+    padding: 14px;
+    border-radius: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-content button:hover,
+.modal-content input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 40px rgba(56,189,248,0.6);
+}
+
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 24px;
+    color: #94a3b8;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #38bdf8;
+}
+/* IMAGE HOVER TILT */
+.half2 img,
+.section2 img {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    will-change: transform;
+}.white-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #ffffff;
+    color: #020617;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    cursor: pointer;
+    z-index: 3000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+body.white {
+    background: #ffffff;
+    color: #020617;
+}
+
+body.white header,
+body.white section,
+body.white footer {
+    background: #ffffff;
+}.card1 input:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 30px rgba(56,189,248,0.8);
+}
+/* ---------- WHITE MODE FIX ---------- */
+body.white {
+    background: #f8fafc;
+    color: #020617;
+}
+
+body.white header {
+    background: rgba(255,255,255,0.85);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+body.white header a {
+    color: #020617 !important;
+}
+
+body.white .section1 h1 {
+    background: linear-gradient(to right, #020617, #2563eb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.white .section2,
+body.white .section3,
+body.white .section6 {
+    background: #ffffff;
+}
+
+body.white .ser1 div,
+body.white .card1 {
+    background: #f1f5f9;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+body.white .service p,
+body.white .text2 p {
+    color: #334155;
+}
+
+body.white footer {
+    background: #f1f5f9;
+}
+
+body.white .card1 input {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #ffffff;
+}
+/* =========================
+   RESPONSIVE (MOBILE FIX)
+   ========================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header .nav {
+        float: none;
+        padding: 18px 20px;
+        text-align: center;
+    }
+
+    header .nav ul li {
+        float: none;
+        display: inline-block;
+        margin: 0 12px;
+    }
+
+    /* HERO SECTION */
+    .section1 {
+        flex-direction: column-reverse;
+        padding: 120px 6% 60px;
+        text-align: center;
+    }
+
+    .half1 h1 {
+        font-size: 42px;
+    }
+
+    .half2 img {
+        max-width: 260px;
+        margin-bottom: 30px;
+    }
+
+    /* ABOUT SECTION */
+    .section2 {
+        flex-direction: column;
+        padding: 90px 6%;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .section2 img {
+        max-width: 260px;
+    }
+
+    .text2 h1 {
+        font-size: 32px;
+    }
+
+    .text2 p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    /* SERVICES */
+    .ser1 {
+        flex-direction: column;
+    }
+
+    .ser1 div {
+        min-width: 100%;
+    }
+
+    /* PRICING */
+    .card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card1 {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    /* WHITE MODE BUTTON */
+    .white-btn {
+        bottom: 20px;
+        right: 20px;
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+}.order-form {
+    background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+    padding: 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    animation: popUp 0.4s ease;
+}
+
+.order-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-color: #ff3c78;
+    box-shadow: 0 0 0 2px rgba(255,60,120,0.2);
+}
+
+.upload-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.upload-box label {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    background: #151515;
+    border: 1px dashed #444;
+    border-radius: 10px;
+    color: #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.upload-box label:hover {
+    background: #1f1f1f;
+    color: #fff;
+    border-color: #ff3c78;
+}
+
+.upload-box input {
+    display: none;
+}
+
+.order-form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff3c78, #ff7a18);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.order-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255,60,120,0.4);
+}
+
+@keyframes popUp {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* --- White Mode Base Styles --- */
+body.white {
+    background-color: white !important;
+    color: black !important;
+}
+
+/* White Mode-এ মোডালের ভেতরের ডিজাইন ফিক্স */
+body.white .modal-content {
+    background-color: #f9f9ff !important; /* হালকা সাদা/ধূসর */
+    color: #ffffff !important; /* গাঢ় টেক্সট */
+    border: 1px solid #ddd;
+}
+
+/* White Mode-এ ইনপুট এবং টেক্সট এরিয়া ফিক্স */
+body.white .modal-content input, 
+body.white .modal-content textarea {
+    background-color: white !important;
+    color: #ffffff !important; /* লেখার কালার কালো হবে */
+    border: 1px solid #ffffff !important; /* বর্ডার আরও স্পষ্ট হবে */
+}
+
+/* White Mode-এ লেবেল বা টেক্সট ফিক্স */
+body.white .modal-content h2,
+body.white .modal-content label,
+body.white .modal-content p,
+body.white .modal-content span {
+    color: #ffffff !important;
+}
+
+/* বাটন যাতে সাদা মোডেও সুন্দর দেখায় */
+body.white #finalSendBtn, 
+body.white .modal-content button[type="submit"] {
+    background-color: #8293ff;
+    color: white !important;
+}
+
+/* ক্লোজ বাটন (x) কালার ফিক্স */
+body.white .close {
+    color: #ffffff !important;
+}
+/* Typing Text Style */
+.typing-text {
+    color: #8293ff; /* তোমার থিমের সাথে মিল রেখে কালার */
+    font-weight: bold;
+    border-right: 3px solid #8293ff; /* কার্সার এফেক্ট */
+    padding-right: 5px;
+    animation: blink 0.7s infinite; /* কার্সার টিপটিপ করবে */
+}
+
+/* কার্সার ব্লিংকিং অ্যানিমেশন */
+@keyframes blink {
+    0% { border-color: transparent; }
+    50% { border-color: #8293ff; }
+    100% { border-color: transparent; }
+}
+
+/* সাদা মোডের জন্য কালার ফিক্স */
+body.white .typing-text {
+    color: darkblue;
+    border-right-color: darkblue;
+  }
